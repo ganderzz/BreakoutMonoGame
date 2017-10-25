@@ -3,6 +3,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
     using System.Collections.Generic;
+    using Microsoft.Xna.Framework.Content;
 
     public class SceneManager
     {
@@ -22,6 +23,11 @@
         public void Add(Scene scene)
         {
             _scenes.Add(scene);
+        }
+
+        public void LoadContent(ContentManager content)
+        {
+            _scenes[0]?.LoadContent(content);
         }
 
         public void Update(KeyboardState keyboard)

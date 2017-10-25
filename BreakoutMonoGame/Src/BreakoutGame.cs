@@ -39,6 +39,8 @@ namespace BreakoutMonoGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            SceneManager.Instance.LoadContent(Content);
         }
 
         protected override void UnloadContent()
