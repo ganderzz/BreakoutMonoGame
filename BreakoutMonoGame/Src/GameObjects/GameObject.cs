@@ -1,5 +1,6 @@
 ﻿namespace BreakoutMonoGame.Src.GameObjects
 {
+    using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
 
@@ -7,5 +8,6 @@
     {
         void Update(KeyboardState keyboard);
         void Draw(SpriteBatch spriteBatch);
+        void LoadContent(ContentManager content);
     }
 }

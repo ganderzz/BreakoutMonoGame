@@ -1,5 +1,6 @@
 ﻿namespace BreakoutMonoGame.Scenes
 {
+    using BreakoutMonoGame.Src;
     using BreakoutMonoGame.Src.GameObjects;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
@@ -10,30 +11,29 @@
     {
         public GameScene(GraphicsDeviceManager graphics)
         {
+            _actorManager = new ActorManager();
+
             var viewport = graphics.GraphicsDevice.Viewport;
 
-            _player = new Paddle(graphics, viewport.Width / 2, viewport.Height - 50);
-            _ball = new Ball(graphics, viewport.Width / 2, viewport.Height - 100);
+            _actorManager.Add(new Paddle(graphics, viewport.Width / 2, viewport.Height - 50));
+            _actorManager.Add(new Ball(graphics, viewport.Width / 2, viewport.Height - 100));
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            _player.Draw(spriteBatch);
-            _ball.Draw(spriteBatch);
+            _actorManager.DrawAll(spriteBatch);
         }
 
         public void Update(KeyboardState keyboard)
         {
-            _player.Update(keyboard);
-            _ball.Update(keyboard);
+            _actorManager.UpdateAll(keyboard);
         }
 
         public void LoadContent(ContentManager content)
         {
-            _ball.LoadContent(content);
+            _actorManager.LoadAllContent(content);
         }
 
-        readonly Paddle _player;
-        readonly Ball _ball;
+        readonly ActorManager _actorManager;
     }
 }

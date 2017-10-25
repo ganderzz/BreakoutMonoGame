@@ -1,6 +1,7 @@
 ﻿namespace BreakoutMonoGame
 {
     using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
 
@@ -37,6 +38,11 @@
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_playerTexture, _position, Color.White);
+        }
+
+        public void LoadContent(ContentManager content)
+        {
+            return;
         }
 
         Texture2D _playerTexture;

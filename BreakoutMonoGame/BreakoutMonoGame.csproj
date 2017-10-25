@@ -51,6 +51,7 @@
     <Compile Include="Src\Scenes\SceneManager.cs" />
     <Compile Include="Src\GameObjects\GameObject.cs" />
     <Compile Include="Src\GameObjects\Ball.cs" />
+    <Compile Include="Src\ActorManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
